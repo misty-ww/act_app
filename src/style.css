@@ -1,0 +1,17 @@
+html {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+.contaner-main {
+  background-color: #f2f3f7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container-border {
+  margin: 0 1.4rem;
+}
