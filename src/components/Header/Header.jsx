@@ -1,3 +1,4 @@
+//Компонент кнопок сверху
 import "./header.css";
 
 export default function Header() {
@@ -5,6 +6,7 @@ export default function Header() {
     <>
       <div className="container-header">
         <div className="header-menu">
+          {/* Кнопка меню слева */}
           <div className="header-menu-bg">
             <img
               className="header-menu-img"
@@ -12,7 +14,9 @@ export default function Header() {
               alt="img"
             />
           </div>
+          {/* Контейнер с кнопками справа */}
           <div className="container-right-menu">
+            {/* Кнопка Уведомлений */}
             <div className="header-notice-bg">
               <div className="notice-count">
                 <span>2</span>
@@ -23,6 +27,7 @@ export default function Header() {
                 alt="img"
               />
             </div>
+            {/* Кнопка Профиля */}
             <div className="ava-bg-gradient">
               <div className="header-ava-bg">
                 <img

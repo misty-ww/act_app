@@ -1,6 +1,6 @@
+/* Настройка главного контейнера */
 .container-header {
-  max-width: 32rem;
-  min-width: 32rem;
+  width: 32rem;
   margin: 0 auto;
   margin-top: 6.4rem;
 }
@@ -10,6 +10,8 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Белый круг и центровка иконок */
 .header-menu-bg,
 .header-notice-bg {
   background-color: white;
@@ -29,6 +31,8 @@
   justify-content: center;
   align-items: center;
 }
+
+/* Настройка левой иконки */
 .header-menu-img {
   width: 3.4rem;
   height: 3rem;
@@ -36,10 +40,14 @@
 .header-menu-bg {
   margin-right: auto;
 }
+
+/* Контейнер справа */
 .container-right-menu {
   display: flex;
   gap: 1rem;
 }
+
+/* Настройка кнопки уведомлений и аватарв*/
 .header-notice-bg {
   position: relative;
 }
@@ -67,6 +75,8 @@
   width: 3.8rem;
   height: 3.8rem;
 }
+
+/* Градиент профиля */
 .container-right-menu .ava-bg-gradient {
   display: flex;
   justify-content: center;
