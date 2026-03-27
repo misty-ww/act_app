@@ -1,8 +1,23 @@
 //Компонент кнопок сверху
+import { useEffect, useState } from "react";
 import "./header.css";
 import "./timeAndName.css";
 
 export default function Header({ children }) {
+  const [animate, setAnimate] = useState(false);
+  function startAnimate() {
+    setAnimate(true);
+    const timout = setTimeout(() => {
+      setAnimate(false);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timout);
+    };
+  }
+  useEffect(() => {
+    startAnimate();
+  }, []);
   return (
     <>
       <div className="container-header">
@@ -18,8 +33,11 @@ export default function Header({ children }) {
           {/* Контейнер с кнопками справа */}
           <div className="container-right-menu">
             {/* Кнопка Уведомлений */}
-            <div className="header-notice-bg">
-              <div className="notice-count">
+            <div
+              className="header-notice-bg"
+              onMouseEnter={() => startAnimate()}
+            >
+              <div className={`notice-count ${animate ? "animate" : null}`}>
                 <span>2</span>
               </div>
               <img
@@ -43,6 +61,9 @@ export default function Header({ children }) {
         <div className="data-time">
           <p className="time">{children}</p>
           <p className="name"></p>
+        </div>
+        <div className="name-container">
+          <p className="name">User, между первой и второй...</p>
         </div>
       </div>
     </>

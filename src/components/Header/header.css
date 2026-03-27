@@ -36,6 +36,12 @@
 .header-menu-img {
   width: 3.4rem;
   height: 3rem;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+/* Анамация вращения при наведении */
+.header-menu-img:hover {
+  transform: rotateZ(180deg);
 }
 .header-menu-bg {
   margin-right: auto;
@@ -50,6 +56,13 @@
 /* Настройка кнопки уведомлений и аватарв*/
 .header-notice-bg {
   position: relative;
+  cursor: pointer;
+}
+.notice-count.animate {
+  animation: circle 1s linear forwards;
+  position: absolute;
+  left: 1.5rem;
+  bottom: 1.5rem;
 }
 .notice-count {
   display: flex;
@@ -63,6 +76,15 @@
   left: 3rem;
   bottom: 3rem;
 }
+@keyframes circle {
+  from {
+    transform: rotate(0deg) translateX(1.5rem) translateY(-1.5rem) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(1.5rem) translateY(-1.5rem)
+      rotate(-360deg);
+  }
+}
 .notice-count span {
   color: #fff;
   font-size: 1.2rem;
@@ -70,10 +92,22 @@
 .header-notice-img {
   width: 1.5rem;
   height: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+/* Анамация вращения при наведении */
+.header-notice-img:hover {
+  width: 2rem;
+  height: 2rem;
 }
 .header-ava-img {
   width: 3.8rem;
   height: 3.8rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.header-ava-img:hover {
+  transform: rotateZ(360deg);
 }
 
 /* Градиент профиля */
