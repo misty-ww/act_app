@@ -1,0 +1,8 @@
+.container-tags {
+  margin-top: 3.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+
+  height: 4.5rem;
+}

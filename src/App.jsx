@@ -1,8 +1,12 @@
 //Основной компонент
+
+//Основные стили
 import "./style.css";
 
 //Импорт компоентов
 import Header from "./components/Header/Header";
+import Tags from "./components/Body/Tags/Tags";
+import Tag from "./components/Body/Tag/Tag";
 
 import { useEffect, useState } from "react";
 
@@ -59,10 +63,10 @@ function App() {
           <Header>
             {nameDay}, {hourse}:{minute < 10 ? "0" + minute : minute}
           </Header>
-          {/* Рендер времени и дня недели */}
-          {/* <TimeAndName>
-            {nameDay}, {hourse}:{minute < 10 ? "0" + minute : minute}
-          </TimeAndName> */}
+          {/* Тэги */}
+          <Tags>
+            <Tag text="ИСПВ-42"></Tag>
+          </Tags>
         </div>
       </div>
     </>

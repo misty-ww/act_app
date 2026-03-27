@@ -58,10 +58,12 @@ export default function Header({ children }) {
             </div>
           </div>
         </div>
+        {/* Рендер времени и дня недели */}
         <div className="data-time">
           <p className="time">{children}</p>
           <p className="name"></p>
         </div>
+        {/* Рендер имени пользователя и фразы */}
         <div className="name-container">
           <p className="name">User, между первой и второй...</p>
         </div>
