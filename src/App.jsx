@@ -1,8 +1,8 @@
 //Основной компонент
 import "./style.css";
 
+//Импорт компоентов
 import Header from "./components/Header/Header";
-import TimeAndName from "./components/Body/TimeAndName/TimeAndName";
 
 import { useEffect, useState } from "react";
 
@@ -56,11 +56,13 @@ function App() {
       {/* Контейнер для всего экрана */}
       <div className="contaner-main">
         <div className="container-border">
-          <Header />
-          {/* Рендер времени и дня недели */}
-          <TimeAndName>
+          <Header>
             {nameDay}, {hourse}:{minute < 10 ? "0" + minute : minute}
-          </TimeAndName>
+          </Header>
+          {/* Рендер времени и дня недели */}
+          {/* <TimeAndName>
+            {nameDay}, {hourse}:{minute < 10 ? "0" + minute : minute}
+          </TimeAndName> */}
         </div>
       </div>
     </>

@@ -1,7 +1,8 @@
 //Компонент кнопок сверху
 import "./header.css";
+import "./timeAndName.css";
 
-export default function Header() {
+export default function Header({ children }) {
   return (
     <>
       <div className="container-header">
@@ -38,6 +39,10 @@ export default function Header() {
               </div>
             </div>
           </div>
+        </div>
+        <div className="data-time">
+          <p className="time">{children}</p>
+          <p className="name"></p>
         </div>
       </div>
     </>
