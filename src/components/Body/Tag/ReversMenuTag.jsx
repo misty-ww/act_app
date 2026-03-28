@@ -7,7 +7,7 @@ export default function ReversMenuTag() {
   const [rotate, setRotate] = useState(false);
   return (
     <div
-      className="container-tag"
+      className="container-tag container-tag-reverse"
       onMouseEnter={() => setRotate(true)}
       onMouseLeave={() => setRotate(false)}
     >

@@ -12,6 +12,7 @@ import AboutLesson from "./components/Body/shedule_desk/Lesson/AboutLesson";
 import InfoLesson from "./components/Body/shedule_desk/Lesson/InfoLesson";
 import StatusLesson from "./components/Body/shedule_desk/Lesson/StatusLesson";
 import NameLesson from "./components/Body/shedule_desk/Lesson/NameLesson";
+import Progress from "./components/Body/shedule_desk/Lesson/Progress";
 
 import { useEffect, useState } from "react";
 //Масив времени пар кроме пн
@@ -163,6 +164,8 @@ function App() {
                   endLessonHourse = timeOfLesson[7].hour;
                   break;
               }
+              const totalStart = startLessonMinute + startLessonHourse * 60;
+              const totalEnd = endLessonMinute + endLessonHourse * 60;
               return (
                 // Белый контейнер
                 <SheduleDesk>
@@ -180,17 +183,13 @@ function App() {
                     />
                   </AboutLesson>
                   <div className="container-botton-info">
-                    <StatusLesson
-                      startLessonHourse={startLessonHourse}
-                      startLessonMinute={startLessonMinute}
-                      endLessonMinute={endLessonMinute}
-                      endLessonHourse={endLessonHourse}
-                    />
+                    <StatusLesson totalStart={totalStart} totalEnd={totalEnd} />
                     <NameLesson
                       classRoom={classRoom}
                       teacherName={teacherName}
                       nameLesson={nameLesson}
                     />
+                    <Progress totalStart={totalStart} totalEnd={totalEnd} />
                   </div>
                 </SheduleDesk>
               );

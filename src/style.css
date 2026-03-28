@@ -13,12 +13,13 @@ html {
 }
 .contaner-main {
   background-color: #f2f3f7;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
 }
 .container-border {
   margin: 0 1.4rem;
+  margin-bottom: 1rem;
 }
 .container-botton-info {
   display: flex;

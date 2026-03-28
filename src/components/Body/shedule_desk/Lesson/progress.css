@@ -1,0 +1,44 @@
+.container-progress {
+  width: 100%;
+}
+.container-progress-text {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.progress-text {
+  font-size: 1.2rem;
+  color: #9ba0a5;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-image: linear-gradient(
+    135deg,
+    #707070 0%,
+    #000000 100%
+  ); /* фон для Firefox */
+}
+
+/* Chrome, Safari, Edge */
+.progress-bar::-webkit-progress-bar {
+  background-color: #f2f3f7;
+  border-radius: 1rem;
+}
+
+.progress-bar::-webkit-progress-value {
+  background-image: linear-gradient(135deg, #707070 0%, #000000 100%);
+  border-radius: 1rem;
+  transition: width 0.3s ease;
+}
+
+/* Firefox */
+.progress-bar::-moz-progress-bar {
+  background-image: linear-gradient(135deg, #707070 0%, #000000 100%);
+  border-radius: 1rem;
+}

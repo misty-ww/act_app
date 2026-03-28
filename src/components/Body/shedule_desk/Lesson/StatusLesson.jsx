@@ -1,17 +1,9 @@
 import { useEffect, useState } from "react";
 import "./statusLesson.css";
 
-export default function StatusLesson({
-  startLessonMinute,
-  startLessonHourse,
-  endLessonMinute,
-  endLessonHourse,
-}) {
+export default function StatusLesson({ totalStart, totalEnd }) {
   const [status, setStatus] = useState(null);
   let text;
-
-  const totalStart = startLessonMinute + startLessonHourse * 60;
-  const totalEnd = endLessonMinute + endLessonHourse * 60;
   function checkStatus() {
     const nowHourse = new Date().getHours();
     const nowMinute = new Date().getMinutes();
