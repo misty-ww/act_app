@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import "./header.css";
 import "./timeAndName.css";
 
-export default function Header({ children }) {
+export default function Header({ children, phrase }) {
   const [animate, setAnimate] = useState(false);
   function startAnimate() {
     setAnimate(true);
@@ -65,7 +65,7 @@ export default function Header({ children }) {
         </div>
         {/* Рендер имени пользователя и фразы */}
         <div className="name-container">
-          <p className="name">User, между первой и второй...</p>
+          <p className="name">User, {phrase}</p>
         </div>
       </div>
     </>

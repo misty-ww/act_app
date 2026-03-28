@@ -10,6 +10,26 @@ import Tag from "./components/Body/Tag/Tag";
 
 import { useEffect, useState } from "react";
 
+//Масив фраз на входе
+const phrases = [
+  "Прогулял, значит выжил.",
+  "Долг, как кредит - бесконечный.",
+  "Чужой конспект - мой успех.",
+  "Экзамен - лотерея без выигрыша.",
+  "Студент всегда найдет выход.",
+  "Взятка — тоже искусство.",
+  "Списать — не украсть.",
+  "Между первой и второй...",
+  "Сессия всех помирит.",
+  "Учу ночью днем сплю.",
+];
+const naumPhrase = Math.floor(Math.random() * 10);
+const phrase = phrases[naumPhrase];
+//Масив тегов
+const dataTags = [
+  { text: "ИСПВ-42", type: "group" },
+  { text: "Расписание", type: "shedule" },
+];
 //Масив дней недели
 const weekDays = [
   "Понедельник",
@@ -60,12 +80,15 @@ function App() {
       {/* Контейнер для всего экрана */}
       <div className="contaner-main">
         <div className="container-border">
-          <Header>
+          <Header phrase={phrase}>
             {nameDay}, {hourse}:{minute < 10 ? "0" + minute : minute}
           </Header>
           {/* Тэги */}
           <Tags>
-            <Tag text="ИСПВ-42"></Tag>
+            {dataTags.map(({ text, type }) => {
+              return <Tag text={text} type={type} key={type}></Tag>;
+            })}
+            {/* <Tag text="ИСПВ-42" type="group"></Tag> */}
           </Tags>
         </div>
       </div>

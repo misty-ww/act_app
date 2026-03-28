@@ -1,3 +1,4 @@
+/* Настройка контейнера для тегов */
 .container-tag {
   display: flex;
   justify-content: center;
@@ -8,4 +9,42 @@
   padding: 0 2.2rem;
   background-color: #fff;
   border-radius: 2.3rem;
+  cursor: pointer;
+}
+.container-tag .reverseMenu {
+  transition: all 0.5s;
+}
+.close-tag {
+  transition: all 0.5s;
+}
+.animateX {
+  transform: rotateZ(180deg);
+}
+/* Анимация для меню */
+.rotate {
+  transform: rotateZ(180deg);
+}
+/* анимация для тега с групой */
+.animate-group {
+  animation: shake 0.5s linear infinite;
+}
+/* анимация для тега с расписанием */
+.animate-shedule {
+  animation: shake 0.5s linear infinite;
+}
+
+/* Настройка анимации для тегов */
+@keyframes shake {
+  0% {
+    transform: translateY(0rem) translateX(0rem);
+  }
+  25% {
+    transform: translateY(-0.2rem) translateX(-0.1rem);
+  }
+  75% {
+    transform: translateY(0.2rem) translateX(0.1rem);
+  }
+  100% {
+    transform: translateY(0rem) translateX(0rem);
+  }
 }
