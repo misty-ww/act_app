@@ -1,0 +1,32 @@
+.container-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.container-status .point {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 10rem;
+  background-color: rgb(136, 135, 135);
+}
+.container-status .inProgress-point {
+  background-color: #6fe240;
+}
+.container-status .none-point {
+  background-color: #ff7b00;
+}
+.container-status .ended-point {
+  background-color: rgb(136, 135, 135);
+}
+.container-status .inProgress-text {
+  color: #6fe240;
+}
+.container-status .none-text {
+  color: #ff7b00;
+}
+.container-status .ended-text {
+  color: rgb(136, 135, 135);
+}

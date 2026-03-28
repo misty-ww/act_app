@@ -10,6 +10,8 @@ import Tag from "./components/Body/Tag/Tag";
 import SheduleDesk from "./components/Body/shedule_desk/SheduleDesk";
 import AboutLesson from "./components/Body/shedule_desk/Lesson/AboutLesson";
 import InfoLesson from "./components/Body/shedule_desk/Lesson/InfoLesson";
+import StatusLesson from "./components/Body/shedule_desk/Lesson/StatusLesson";
+import NameLesson from "./components/Body/shedule_desk/Lesson/NameLesson";
 
 import { useEffect, useState } from "react";
 //Масив времени пар кроме пн
@@ -26,7 +28,7 @@ const timeOfLesson = [
 //Масив данных о паре
 const dataLesson = [
   {
-    nameLesson: "Програмирование",
+    nameLesson: "Основы алгоритмизации и программирования",
     numberLesson: 1,
     typeLesson: "Практика",
     classRoom: "0305",
@@ -129,6 +131,38 @@ function App() {
               classRoom,
               teacherName,
             }) => {
+              // перменные для хранения перменных времени
+              let startLessonHourse;
+              let startLessonMinute;
+              let endLessonMinute;
+              let endLessonHourse;
+              // Подбор времени занятия под номер пары
+              switch (numberLesson) {
+                case 1:
+                  startLessonMinute = timeOfLesson[0].minute;
+                  startLessonHourse = timeOfLesson[0].hour;
+                  endLessonMinute = timeOfLesson[1].minute;
+                  endLessonHourse = timeOfLesson[1].hour;
+                  break;
+                case 2:
+                  startLessonMinute = timeOfLesson[2].minute;
+                  startLessonHourse = timeOfLesson[2].hour;
+                  endLessonMinute = timeOfLesson[3].minute;
+                  endLessonHourse = timeOfLesson[3].hour;
+                  break;
+                case 3:
+                  startLessonMinute = timeOfLesson[4].minute;
+                  startLessonHourse = timeOfLesson[4].hour;
+                  endLessonMinute = timeOfLesson[5].minute;
+                  endLessonHourse = timeOfLesson[5].hour;
+                  break;
+                case 4:
+                  startLessonMinute = timeOfLesson[6].minute;
+                  startLessonHourse = timeOfLesson[6].hour;
+                  endLessonMinute = timeOfLesson[7].minute;
+                  endLessonHourse = timeOfLesson[7].hour;
+                  break;
+              }
               return (
                 // Белый контейнер
                 <SheduleDesk>
@@ -139,8 +173,25 @@ function App() {
                       typeLesson={typeLesson}
                       numberLesson={numberLesson}
                       timeOfLesson={timeOfLesson}
+                      startLessonHourse={startLessonHourse}
+                      startLessonMinute={startLessonMinute}
+                      endLessonMinute={endLessonMinute}
+                      endLessonHourse={endLessonHourse}
                     />
                   </AboutLesson>
+                  <div className="container-botton-info">
+                    <StatusLesson
+                      startLessonHourse={startLessonHourse}
+                      startLessonMinute={startLessonMinute}
+                      endLessonMinute={endLessonMinute}
+                      endLessonHourse={endLessonHourse}
+                    />
+                    <NameLesson
+                      classRoom={classRoom}
+                      teacherName={teacherName}
+                      nameLesson={nameLesson}
+                    />
+                  </div>
                 </SheduleDesk>
               );
             },

@@ -1,5 +1,6 @@
 /* Контейнер для элементов блока расписания */
 .container-shedule {
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background-color: #fff;
