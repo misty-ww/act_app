@@ -1,0 +1,10 @@
+/* Контейнер для элементов блока расписания */
+.container-shedule {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 2rem;
+  border-radius: 4rem;
+  gap: 2rem;
+  padding: 1rem;
+}

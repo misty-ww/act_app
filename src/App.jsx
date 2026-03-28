@@ -7,9 +7,39 @@ import "./style.css";
 import Header from "./components/Header/Header";
 import Tags from "./components/Body/Tags/Tags";
 import Tag from "./components/Body/Tag/Tag";
+import SheduleDesk from "./components/Body/shedule_desk/SheduleDesk";
+import AboutLesson from "./components/Body/shedule_desk/Lesson/AboutLesson";
+import InfoLesson from "./components/Body/shedule_desk/Lesson/InfoLesson";
 
 import { useEffect, useState } from "react";
-
+//Масив времени пар кроме пн
+const timeOfLesson = [
+  { hour: 8, minute: 30 },
+  { hour: 10, minute: 10 },
+  { hour: 10, minute: 20 },
+  { hour: 12, minute: 0 },
+  { hour: 12, minute: 40 },
+  { hour: 14, minute: 20 },
+  { hour: 14, minute: 30 },
+  { hour: 16, minute: 10 },
+];
+//Масив данных о паре
+const dataLesson = [
+  {
+    nameLesson: "Програмирование",
+    numberLesson: 1,
+    typeLesson: "Практика",
+    classRoom: "0305",
+    teacherName: "Абрамова П. А.",
+  },
+  {
+    nameLesson: "ОСИС",
+    numberLesson: 2,
+    typeLesson: "Практика",
+    classRoom: "0104",
+    teacherName: "Нехлебаева М. Н.",
+  },
+];
 //Масив фраз на входе
 const phrases = [
   "Прогулял, значит выжил.",
@@ -90,6 +120,31 @@ function App() {
             })}
             {/* <Tag text="ИСПВ-42" type="group"></Tag> */}
           </Tags>
+          {/* Создаем количество окон с предметами */}
+          {dataLesson.map(
+            ({
+              nameLesson,
+              numberLesson,
+              typeLesson,
+              classRoom,
+              teacherName,
+            }) => {
+              return (
+                // Белый контейнер
+                <SheduleDesk>
+                  {/* Желтый фон с картинкой - верхняяя панель*/}
+                  <AboutLesson>
+                    {/* Верхние даные о паре */}
+                    <InfoLesson
+                      typeLesson={typeLesson}
+                      numberLesson={numberLesson}
+                      timeOfLesson={timeOfLesson}
+                    />
+                  </AboutLesson>
+                </SheduleDesk>
+              );
+            },
+          )}
         </div>
       </div>
     </>
